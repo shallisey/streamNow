@@ -53,7 +53,7 @@ function bindSearchButton() {
                     if (response.results.length == 1) {
                         li.className = "col-12 card max-height"
                     } else {
-                        li.className = "col-lg-4 col-sm-4 card max-height"
+                        li.className = "col-lg-3 col-md-4 col-sm-6 card max-height"
                     }
 
 
