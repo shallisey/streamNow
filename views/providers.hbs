@@ -1,0 +1,101 @@
+{{> header}}
+
+<div class="container">
+    <div class="row text-center">
+        <div class="col text-center p-3">
+            <div>
+                <img class="img-fluid center-block rounded mx-auto px-2" src="/images/just-watch.png" alt="just-watch-logo">
+            </div>
+        </div>
+
+    </div>
+    <div class="row border">
+        <div class="col-md-6 text-center mt-2" id="img-poster">
+            {{#if poster_path}}
+            <img src="https://image.tmdb.org/t/p/w342{{poster_path}}" alt="{{name}}">
+            {{else}}
+            <img src="/images/image-not-found.png" class="img-thumbnail" alt="no image for {{name}}">
+            {{/if}}
+        </div>
+        <div class="col-md-6 text-center container my-auto mt-2">
+            <div class="container">
+            
+                <div class="row mt-2" id="stream-providers">
+                    <h5 class="text-left w-100">{{name}} streaming on</h5>
+                    {{#if flatrate}}
+                    {{#each flatrate}}
+                    <div class="text-center container col-3 p-2">
+                        <img src="https://image.tmdb.org/t/p/w45{{logo_path}}" alt="{{this.provider_name}}">
+                    </div>
+                    {{/each}}
+                    {{else}}
+                    <p>No streaming services offer {{name}}</p>
+                    {{/if}}
+                </div>
+                <div class="row " id="buy-from">
+                    <h5 class="text-left w-100">Buy {{name}}</h5>
+                    {{#if buy}}
+                    {{#each buy}}
+                    <div class="text-center container col-3 p-2">
+                        <img src="https://image.tmdb.org/t/p/w45{{logo_path}}" alt="{{this.provider_name}}">
+                    </div>
+                    {{/each}}
+                    {{else}}
+                    <p>You can not buy {{name}}</p>
+                    {{/if}}
+                </div>
+                <div class="row " id="rent-from">
+                    <h5 class="text-left w-100">Rent {{name}}</h5>
+                    {{#if rent}}
+                    {{#each rent}}
+                    <div class="text-center container col-3 p-2">
+                        <img src="https://image.tmdb.org/t/p/w45{{logo_path}}" alt="{{this.provider_name}}">
+                    </div>
+                    {{/each}}
+                    {{else}}
+                    <p>You can not rent {{name}}</p>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" id="links">
+        {{#if poster_path}}
+        <div class="col-md-6 mt-2" id="link-download">
+            <a href="https://image.tmdb.org/t/p/w500{{poster_path}}" class="text-left" target="_blank" download="{{name}}">
+                <button class="btn btn-secondary">
+                    Download poster
+                </button>
+            </a>
+        </div>
+        {{else}}
+        <p>No image to download</p>
+        {{/if}}
+
+        {{#if imdbID}}
+        <div class="col-md-6 mt-2" id="link-imdb">
+            <a href="https://www.imdb.com/title/{{imdbID}}/" class="text-left">
+                <button class="btn btn-primary">
+                    Go to IMDb
+                </button>
+            </a>
+        </div>
+        {{else}}
+        {{/if}}
+    </div>
+
+    <div class="container p-4" id="content-overview">
+        <div class="row text-center ">
+            <div class="col text-center">
+                <h5>Overview</h5>
+            </div>
+        </div>
+        <div class="row text-center">
+             <div class="col-md text-center">
+                <p>{{overview}}</p>
+            </div>
+        </div>
+    </div>
+
+    
+
