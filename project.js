@@ -1,5 +1,5 @@
 const express = require('express');
-const port = 8080
+const port = process.env.PORT || 8080
 const path = require('path')
 
 const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
