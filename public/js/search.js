@@ -50,7 +50,12 @@ function bindSearchButton() {
                 ul.className = "row"
                 for (i = 0; i < response.results.length; i++) {
                     let li = document.createElement("li")
-                    li.className = "col-lg-4 col-sm-6 card max-height"
+                    if (response.results.length == 1) {
+                        li.className = "col-12 card max-height"
+                    } else {
+                        li.className = "col-lg-4 col-sm-4 card max-height"
+                    }
+
 
                     // let newCard = document.createElement("div")
                     // newCard.className = "col-lg-4 col-sm-6 card max-height "
@@ -124,7 +129,7 @@ function bindSearchButton() {
 
                     cardBody.appendChild(h5)
                     cardBody.appendChild(paragraph)
-                    
+                    // cardBody.className = "d-flex align-items-end"
 
                     
                     if (response.results[i].media_type === "movie" || response.results[i].media_type === "tv") {
