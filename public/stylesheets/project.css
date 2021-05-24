@@ -12,6 +12,10 @@ body{
     margin: auto;
   }
 
+cite {
+    font-size: .50rem;
+}
+
 .carousel {
     max-width: 400px;
     max-height: auto;

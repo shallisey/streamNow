@@ -114,6 +114,15 @@ function bindSearchButton() {
                         aTag.href = `/${response.results[i].media_type}/${response.results[i].id}`
                     }
 
+                    let citeTag = document.createElement("a")
+                    citeTag.href = `https://www.themoviedb.org/`
+                    citeTag.innerHTML = "TMDb"
+
+                    let citation = document.createElement("cite")
+                    citation.innerHTML = "All images from search are from "
+                    citation.append(citeTag)
+
+
                     img.className = "card-img-top img-sizer"
 
                     let cardBody = document.createElement("div")
@@ -126,7 +135,7 @@ function bindSearchButton() {
                     aTag.innerHTML = "Streaming providers"
                     linkDiv.appendChild(aTag)
                     
-
+                    
                     cardBody.appendChild(h5)
                     cardBody.appendChild(paragraph)
                     // cardBody.className = "d-flex align-items-end"
@@ -138,6 +147,7 @@ function bindSearchButton() {
                     
                     
                     li.appendChild(img)
+                    li.appendChild(citation)
                     li.appendChild(cardBody)
                     // newCard.appendChild(img)
                     // newCard.appendChild(cardBody)
